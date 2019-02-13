@@ -29,7 +29,7 @@ services:
       - nginx_network
 
   db:
-    image: postgres
+    build: ./postgres
     env_file:
       - postgres/db_env
     networks:
