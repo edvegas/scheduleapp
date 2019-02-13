@@ -21,6 +21,8 @@ services:
     build: ./nginx
     ports:
       - 80:80
+    volumes:
+      - staticvol:/web/scheduledweb/static
     depends_on:
       - shiftsapp
     networks:
@@ -33,7 +35,7 @@ services:
     networks:
       - db_network
     volumes:
-      - /pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
 
 networks:
   nginx_network:
@@ -42,5 +44,6 @@ networks:
     driver: bridge
 
 volumes:
+  pgdata:
   appvol:
   staticvol:
