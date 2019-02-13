@@ -7,6 +7,9 @@ services:
     networks:
       - nginx_network
       - db_network
+    volumes:
+      - appvol:/web/scheduleweb
+      - staticvol:/web/scheduleweb/static
     expose: 
       - 8000
     depends_on:
@@ -17,7 +20,7 @@ services:
     restart: always
     build: ./nginx
     ports:
-      - 8000:80
+      - 80:80
     depends_on:
       - shiftsapp
     networks:
@@ -37,3 +40,7 @@ networks:
     driver: bridge
   db_network:
     driver: bridge
+
+volumes:
+  appvol:
+  staticvol:

@@ -25,7 +25,7 @@ SECRET_KEY = 'hkn%j&#vdv$ay%o_j$=zt1scs^07%t7(!7+u)mj02-bbzlr@+^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ffshari.duckdns.org', 'db']
+ALLOWED_HOSTS = ['ffshari.duckdns.org', 'db', '35.195.255.54']
 
 
 # Application definition
