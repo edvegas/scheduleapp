@@ -1,0 +1,19 @@
+{% extends "shifts/index.html" %}
+{% block content %}
+      <h3 class="text-center">Shifts</h3>
+      <section id="schedule-main">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-9 mx-auto">
+					<div class="clearfix mb-4">
+						<a class="btn btn-info left" href="{% url 'mainpage' %}?{{ prev_month }}"> Previous Month </a>
+						<a class="btn btn-info right" href="{% url 'mainpage' %}?{{ next_month }}"> Next Month </a>
+						<a class="btn btn-success right mr-2" href="{% url 'schedule_new' %}"> New Shift </a>
+					</div>
+						{{ calendar }}
+				</div>
+			</div>
+		</div>
+	</section>
+    </div>
+{% endblock content %}

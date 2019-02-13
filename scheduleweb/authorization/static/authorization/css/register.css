@@ -1,0 +1,11 @@
+.card {
+  border: none;
+  box-shadow: 0 0 0.5em #999; }
+  .card a {
+    text-decoration: none; }
+
+.card-header {
+  background: #fff; }
+
+input[type="submit"] {
+  font-size: 1.5em; }

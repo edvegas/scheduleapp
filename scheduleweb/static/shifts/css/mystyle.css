@@ -1,0 +1,153 @@
+.card {
+  border: none;
+  box-shadow: 0 0 0.5em #999; }
+
+.card a {
+    text-decoration: none; }
+
+.card-header {
+  background: #fff; }
+
+input[type="submit"] {
+  font-size: 1.5em; }
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #4a76a8;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.calendar {
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid #f2f2f2;
+}
+
+.calendar tr:first-child  {
+    background-color: #6c7ae0;
+    color: #fff;
+    border: none;
+}
+
+.calendar tr:first-child th:first-child {
+  font-size: 20px;
+}
+
+.calendar tr:nth-child(2) {
+    border: none;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.calendar tr:nth-child(2) th {
+    text-align: center;
+    border: 2px;
+    background-color: darkseagreen;
+    color: #fff;
+}
+
+.calendar td {
+  width: 100px;
+  height: 80px;
+  padding: 15px 0px 0px 0px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+ul {
+  height: 100%;
+  padding: 0;
+  list-style-type: none;
+}
+
+td > ul > li:first-child {
+    background-color: blanchedalmond;
+}
+
+td > ul > li:last-child {
+    background-color: currentColor;
+}
+
+span {
+  padding-left: 5px;
+}
+
+a {
+  color: #17a2b8;
+  padding-left: 5px;
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+
+.clearfix {
+  margin: 15px;
+}
+
+.form {
+  margin: auto;
+}
+
+.form input, .form select, .form textarea {
+  border-radius: 5px;
+  border: 1px solid #17a2b8;
+  outline: none;
+  background: none;
+  padding: 5px;
+  width: 100%;
+}

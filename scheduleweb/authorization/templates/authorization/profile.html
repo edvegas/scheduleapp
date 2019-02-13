@@ -1,0 +1,28 @@
+{% extends "shifts/index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section col-lg-6 col-md-8 col-sm-12 mx-auto">
+      <div class="media">
+        <div class="media-body">
+        	{% if messages %}
+				{% for msg in messages %}
+					<div class="alert alert-{{ msg.tags }}">
+						{{ msg }}
+					</div>
+				{% endfor %}
+			{% endif %}
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+      <form method="POST">
+		{% csrf_token %}
+		<h5 class="text-center mx-auto">Profile Info</h5>
+			{{ u_form|crispy }}
+			{{ p_form|crispy }}
+            <div class="form-group pt-3">
+               <input type="submit" class="btn btn-outline-info btn-block" value="Update">
+			</div>
+	  </form>
+    </div>
+{% endblock content %}

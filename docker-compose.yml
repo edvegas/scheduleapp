@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+
+  shiftsapp:
+    build: ./scheduleweb
+    volumes:
+      - ./scheduleweb:/web/scheduleweb
+    networks:
+      - nginx_network
+      - db_network
+    expose: 
+      - 8000
+    depends_on:
+      - postgres
+    command: gunicorn scheduleweb.wsgi:application -w 5 -b 0.0.0.0:8000
+
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - 8000:80
+    depends_on:
+      - shiftsapp
+    networks:
+      - nginx_network
+
+  postgres:
+    build: ./postgres
+    restart: unless-stopped
+    expose:
+      - 5432
+    environment:
+      LC_ALL: C.UTF-8
+      POSTGRES_USER: user1
+      POSTGRES_PASSWORD: user1
+      POSTGRES_DB: scheduling
+    networks:
+      - db_network
+    volumes:
+      - /pgdata:/var/lib/postgresql/data
+
+networks:
+  nginx_network:
+    driver: bridge
+  db_network:
+    driver: bridge
