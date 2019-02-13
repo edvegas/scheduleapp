@@ -4,16 +4,14 @@ services:
 
   shiftsapp:
     build: ./scheduleweb
-    volumes:
-      - ./scheduleweb:/web/scheduleweb
     networks:
       - nginx_network
       - db_network
     expose: 
       - 8000
     depends_on:
-      - postgres
-    command: gunicorn scheduleweb.wsgi:application -w 5 -b 0.0.0.0:8000
+      - db
+    command: gunicorn scheduleweb.wsgi -w 5 -b 0.0.0.0:8000
 
   nginx:
     restart: always
@@ -25,16 +23,10 @@ services:
     networks:
       - nginx_network
 
-  postgres:
-    build: ./postgres
-    restart: unless-stopped
-    expose:
-      - 5432
-    environment:
-      LC_ALL: C.UTF-8
-      POSTGRES_USER: user1
-      POSTGRES_PASSWORD: user1
-      POSTGRES_DB: scheduling
+  db:
+    image: postgres
+    env_file:
+      - postgres/db_env
     networks:
       - db_network
     volumes:
