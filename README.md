@@ -1,4 +1,4 @@
-## Django/python web application for employees shift and schedule management
+## Django/python web application in Docker for employees shift and schedule management
 Also can be used as calendar notebook. 
 
 Example of deploying in Google Cloud Platform is below.
