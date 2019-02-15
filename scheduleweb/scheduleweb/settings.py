@@ -134,10 +134,3 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'mainpage'
 LOGIN_URL = 'login'
 
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = '587'
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'vedevas'
-EMAIL_HOST_PASSWORD = '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'
