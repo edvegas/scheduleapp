@@ -44,3 +44,11 @@ Inside of container:
 ```python manage.py createsuperuser```
 
 Follow instructions. After admin creation, open external IP of our VM instance in browser and enjoy.
+
+![Login Page](images_for_readme/loginpage.PNG)
+
+Admin interface is available by ```http://your_IP/superadm```
+
+Main page with our calendar and with some added data:
+
+![Main Page](images_for_readme/main.PNG)
