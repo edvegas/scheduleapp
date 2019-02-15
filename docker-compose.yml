@@ -13,10 +13,16 @@ services:
       - 8000
     depends_on:
       - db
-    command: /bin/bash -c "python manage.py collectstatic --no-input;
-                           python manage.py makemigrations;
-                           python manage.py migrate;
-                           gunicorn scheduleweb.wsgi -w 5 -b 0.0.0.0:8000"
+    container_name: app_container
+    command: 
+      - /bin/sh 
+      - -c 
+      - | 
+          sleep 20
+          python manage.py collectstatic --no-input
+          python manage.py makemigrations
+          python manage.py migrate
+          gunicorn scheduleweb.wsgi -w 5 -b 0.0.0.0:8000
 
   nginx:
     restart: always
