@@ -4,12 +4,12 @@ from django.core.validators import RegexValidator
 
 
 TEAM_CHOICES = (
-            ('team1', 'PBB/ LCP/ Husqvarna/ GESS'),
-            ('team2', 'RenCap/ BAT/ Schiphol'),
-            ('team3', 'DKSS/ Kering/ MBF'),
-            ('team4', 'Bridgestone JS/ Mazda/ British Council'),
-            ('team5', 'Operating ITG'),
-            ('team6', 'Operating Bridgestone/DKSS'),
+            ('team1', 'Manchester United'),
+            ('team2', 'Real Madrid'),
+            ('team3', 'Barcelona'),
+            ('team4', 'Bayern Munich'),
+            ('team5', 'Liverpool'),
+            ('team6', 'Juventus'),
 )
 
 
