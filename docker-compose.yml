@@ -32,6 +32,7 @@ services:
       - nginx_network
 
   db:
+    restart: on-failure
     build: ./postgres
     env_file:
       - postgres/db_env
