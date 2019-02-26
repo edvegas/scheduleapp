@@ -1,25 +1,28 @@
 from django.test import TestCase
 
+from django.contrib.auth.models import User
+from authorization.models import Profile
 
-class YourTestClass(TestCase):
 
+class ProfileModelTest(TestCase):
+  
     @classmethod
     def setUpTestData(cls):
-        print("setUpTestData: Run once to set up non-modified data for all class methods.")
-        pass
+        user1 = User.objects.create(username='vedevas',
+                                    password='SuperPassword777',
+                                    first_name='Billy',
+                                    last_name='Bong',
+                                    email='billybong@gmail.com')
+        profile1 = Profile.objects.update(user=user1,
+                                          phone='+79005553535',
+                                          team='team4')
 
-    def setUp(self):
-        print("setUp: Run once for every test method to setup clean data.")
-        pass
+    def test_phone_max_length(self):
+        profile=Profile.objects.get(id=1)
+        max_length = profile._meta.get_field('phone').max_length
+        self.assertEquals(max_length, 15)
 
-    def test_false_is_false(self):
-        print("Method: test_false_is_false.")
-        self.assertFalse(False)
-
-    def test_false_is_true(self):
-        print("Method: test_false_is_true.")
-        self.assertTrue(False)
-
-    def test_one_plus_one_equals_two(self):
-        print("Method: test_one_plus_one_equals_two.")
-        self.assertEqual(1 + 1, 2)
+    def test_team_max_length(self):
+        profile=Profile.objects.get(id=1)
+        max_length = profile._meta.get_field('team').max_length
+        self.assertEquals(max_length, 30)
