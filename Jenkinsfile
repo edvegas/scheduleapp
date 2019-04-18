@@ -5,8 +5,6 @@ pipeline {
             steps {
                 script {
                     echo 'Build docker images'
-                    sh "docker-compose build" 
-                    sh 'docker images'
                 }
             }
         }
